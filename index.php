@@ -1,26 +1,27 @@
 <?php
 
-require_once("./connection.php");
+require_once('./connection.php');
 
 $stmt = $pdo->query('SELECT title, id FROM books');
 
 ?>
-<!doctype html>
-<html>
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Raamatupood</title>
+    <title>Document</title>
 </head>
 <body>
-    <li>
+    <ul>
+
 <?php while ($book = $stmt->fetch()) { ?>
-        <a href="book.php?id=<? echo $book['id']; ?>">
-            <?php echo $book['title']; ?>
-        </a>
-<?php } ?>
-    </li>
-
-
+        <li>
+            <a href="book.php?id=<?= $book['id'] ?>">
+                <?= $book['title']; ?>
+            </a>
+        </li>
 </body>
 </html>
+<?php } ?>
