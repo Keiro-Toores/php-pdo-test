@@ -15,6 +15,7 @@ $stmt = $pdo->query('SELECT title, id FROM books');
 </head>
 <body>
     <ul>
+        
 
 <?php while ($book = $stmt->fetch()) { ?>
         <li>
@@ -22,6 +23,7 @@ $stmt = $pdo->query('SELECT title, id FROM books');
                 <?= $book['title']; ?>
             </a>
         </li>
+        
 </body>
 </html>
 <?php } ?>
